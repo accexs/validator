@@ -1,0 +1,22 @@
+{
+    "name": "accexs/validator",
+    "description": "Extensible OOP PHP input validation package based on wixel/gump (https://wixelhq.com) and laravel",
+    "keywords": ["validator","validation"],
+    "authors": [
+        {
+            "name": "Ronny Arvelo",
+            "homepage": "https://github.com/accexs/"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/accexs/",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Accexs\\":"src/",
+            "Accexs\\Rules\\":"src/rules/"
+        }
+    }
+}

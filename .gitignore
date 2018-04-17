@@ -1,0 +1,6 @@
+.DS_Store
+.phpintel
+
+### Composer ###
+composer.phar
+/vendor/
