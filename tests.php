@@ -7,30 +7,30 @@ require "gump.class.php";
 $validator = new GUMP();
 
 $rules = array(
-    'missing'				=> 'required',
-    'email'					=> 'valid_email',
-    'max_len'				=> 'max_len,1',
-    'min_len'				=> 'min_len,4',
-    'exact_len'				=> 'exact_len,10',
-    'alpha'					=> 'alpha',
-    'alpha_numeric'			=> 'alpha_numeric',
-    'alpha_dash'			=> 'alpha_dash',
-    'alpha_numeric_space'	=> 'alpha_numeric',
-    'alpha_space'			=> 'alpha_space',
-    'numeric'				=> 'numeric',
-    'integer'				=> 'integer',
-    'boolean'				=> 'boolean',
-    'float'					=> 'float',
-    'valid_url'				=> 'valid_url',
-    'url_exists'			=> 'url_exists',
-    'valid_ip'				=> 'valid_ip',
-    'valid_ipv4'			=> 'valid_ipv4',
-    'valid_ipv6'			=> 'valid_ipv6',
-    'valid_name'			=> 'valid_name',
-    'contains'				=> 'contains,free pro basic',
-    'array_size_equal'		=> 'valid_array_size_equal,2',
-    'array_size_greater'	=> 'valid_array_size_greater,2',
-    'array_size_lesser'		=> 'valid_array_size_lesser,2'
+    'missing'               => 'required',
+    'email'                 => 'valid_email',
+    'max_len'               => 'max_len,1',
+    'min_len'               => 'min_len,4',
+    'exact_len'             => 'exact_len,10',
+    'alpha'                 => 'alpha',
+    'alpha_numeric'         => 'alpha_numeric',
+    'alpha_dash'            => 'alpha_dash',
+    'alpha_numeric_space'   => 'alpha_numeric',
+    'alpha_space'           => 'alpha_space',
+    'numeric'               => 'numeric',
+    'integer'               => 'integer',
+    'boolean'               => 'boolean',
+    'float'                 => 'float',
+    'valid_url'             => 'valid_url',
+    'url_exists'            => 'url_exists',
+    'valid_ip'              => 'valid_ip',
+    'valid_ipv4'            => 'valid_ipv4',
+    'valid_ipv6'            => 'valid_ipv6',
+    'valid_name'            => 'valid_name',
+    'contains'              => 'contains,free pro basic',
+    'array_size_equal'      => 'valid_array_size_equal,2',
+    'array_size_greater'    => 'valid_array_size_greater,2',
+    'array_size_lesser'     => 'valid_array_size_lesser,2'
 );
 
 $invalid_data = array(
@@ -73,7 +73,7 @@ $valid_data = array(
     'alpha_space'           => 'abcdefg ',
     'numeric'               => 2.00,
     'integer'               => 3,
-    'boolean'               => FALSE,
+    'boolean'               => false,
     'float'                 => 10.10,
     'valid_url'             => 'https://wixelhq.com',
     'url_exists'            => 'https://wixelhq.com',
@@ -99,7 +99,7 @@ $validator->validate($invalid_data, $rules);
 // Print out the errors using the new get_readable_errors() method:
 print_r($validator->get_readable_errors());
 
-if($validator->validate($valid_data, $rules)) {
+if ($validator->validate($valid_data, $rules)) {
     echo "\nTHESE ALL SUCCEED:\n\n";
     print_r($valid_data);
 }

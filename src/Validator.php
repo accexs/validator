@@ -70,7 +70,7 @@ class Validator
                             $class = $rule.'Validator';
                         }
 
-                        $class = ucfirst($class);
+                        $class = ucfirst(str_replace('_', '', $class));
 
                         //instance class and validate
                         $classDir = __DIR__.DIRECTORY_SEPARATOR.'rules'.DIRECTORY_SEPARATOR. $class.'.php';
@@ -97,6 +97,6 @@ class Validator
                 }
             }
         }
-        return (count($errors) > 0) ? array_filter($errors) : true;
+        return (count(array_filter($errors)) > 0) ? Message::getMessages(array_filter($errors), $this->lang) : true;
     }
 }
